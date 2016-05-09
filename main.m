@@ -14,7 +14,6 @@ int main(int argc, const char * argv[]) {
 NSString *inputString = @"Hey my name is Oliver!";
         
 NSMutableString *cipher = [[NSMutableString alloc]init];
-NSString *upperAlphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 NSString *lowerAlphabet = @"abcdefghijklmnopqrstuvwxyz";
         
 // Individually look at each character in the input string using a for loop
@@ -28,16 +27,6 @@ NSString *lowerAlphabet = @"abcdefghijklmnopqrstuvwxyz";
                     {
                         NSUInteger change = 25 - ib;
                         NSString *addLetter = [NSString stringWithFormat:@"%C", [lowerAlphabet characterAtIndex:change]];
-                        [cipher appendString:addLetter];
-                    }
-                }
-            }else if([upperAlphabet containsString:letter]){
-                for (NSUInteger ib = 0; ib<[upperAlphabet length];ib++)
-                {
-                    if ([upperAlphabet characterAtIndex:ib] == [letter characterAtIndex:0])
-                    {
-                        NSUInteger change = 25 - ib;
-                        NSString *addLetter = [NSString stringWithFormat:@"%C", [upperAlphabet characterAtIndex:change]];
                         [cipher appendString:addLetter];
                     }
                 }
