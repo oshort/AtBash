@@ -14,19 +14,19 @@ int main(int argc, const char * argv[]) {
 NSString *inputString = @"Hey my name is Oliver!";
         
 NSMutableString *cipher = [[NSMutableString alloc]init];
-NSString *lowerAlphabet = @"abcdefghijklmnopqrstuvwxyz";
+NSString *alphabet = @"abcdefghijklmnopqrstuvwxyz";
         
 // Individually look at each character in the input string using a for loop
         for (int i = 0; i < [inputString length]; i++) {
             NSString *letter = [NSString stringWithFormat: @"%C", [inputString characterAtIndex: i]];
-            
-        if ([lowerAlphabet containsString: letter] ) {
-            for (NSUInteger ib = 0; ib <[lowerAlphabet length]; ib++)
+// If the letter is found in the lower
+        if ([alphabet containsString: letter] ) {
+            for (NSUInteger ib = 0; ib <[alphabet length]; ib++)
                 {
-                    if ([lowerAlphabet characterAtIndex:ib] == [letter characterAtIndex:0])
+                    if ([alphabet characterAtIndex:ib] == [letter characterAtIndex:0])
                     {
                         NSUInteger change = 25 - ib;
-                        NSString *addLetter = [NSString stringWithFormat:@"%C", [lowerAlphabet characterAtIndex:change]];
+                        NSString *addLetter = [NSString stringWithFormat:@"%C", [alphabet characterAtIndex:change]];
                         [cipher appendString:addLetter];
                     }
                 }
